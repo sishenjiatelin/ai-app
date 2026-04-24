@@ -1,5 +1,9 @@
-def main():
-    print("Day 1 setup complete!")
+from fastapi import FastAPI
 
-if __name__ == "__main__":
-    main()
+# 创建 FastAPI 应用实例
+app = FastAPI()
+
+# 定义根路径的 GET 路由
+@app.get("/")
+async def root():
+    return {"message": "Hello World"}
