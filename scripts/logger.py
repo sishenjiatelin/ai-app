@@ -12,15 +12,18 @@ try:
         text = f.read()
     print("内容：",text)
     logging.info(f"输入：{text}")
-    # url = "https://httpbin.org/post"
-    url = "https://httpbin.org/status/500"
+    url = "https://httpbin.org/post"
+    # url = "https://httpbin.org/status/500"
     success = False
     for i in range(3):
         try:
             response = requests.post(url,data={"content":text},timeout=5)
+            data =response.json()
+            content = data["form"]["content"]
             response.raise_for_status()
             print("第", i + 1, "次请求成功")
-            logging.info(f"第 {i + 1} 次请求成功，输出：{response.text}")
+            print("接口收到的内容是：", content)
+            logging.info(f"第 {i + 1} 次请求成功，输出：{content}")
             success = True
             break
         except Exception as e:
