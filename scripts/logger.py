@@ -7,8 +7,7 @@ DATA_DIR = BASE_DIR/ "data" / "input.txt"
 LOG_FILE = BASE_DIR/ "logs" / "log.txt"
 url_post = "https://httpbin.org/post"
 url_test = "https://httpbin.org/status/500"
-logging.basicConfig(filename = LOG_FILE,level = logging.INFO,
-format = "%(asctime)s | %(levelname)s |%(message)s",encoding="utf-8")
+
 
 def LogConfig():
     logging.basicConfig(filename = LOG_FILE,level = logging.INFO,
@@ -25,7 +24,7 @@ def READ_Text():
 def Call_API(url,text):
     for i in range(3):
         try:
-            respose = request.post(url,data = {"content":text},timeout = 5)
+            respose = requests.post(url,data = {"content":text},timeout = 5)
             respose.raise_for_status()
             data = respose.json()
             content = data["form"]["content"]

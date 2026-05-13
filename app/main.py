@@ -1,9 +1,5 @@
-from fastapi import FastAPI
+from src.runner import *
 
-# 创建 FastAPI 应用实例
-app = FastAPI()
 
-# 定义根路径的 GET 路由
-@app.get("/")
-async def root():
-    return {"message": "Hello World"}
+if __name__ == "__main__":
+    run()
