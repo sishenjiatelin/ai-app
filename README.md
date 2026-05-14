@@ -9,15 +9,23 @@
 
 ## 项目结构
 ```text
-ai-job-roadmap/
-├─ app/
-│  └─ main.py
-├─ data/
-│  └─ .gitkeep
-├─ tests/
-│  └─ .gitkeep
-├─ .gitignore
-├─ README.md
-└─ requirements.txt
 
-##提交验证
+ai-job-roadmap
+├─ app
+│  └─ main.py
+├─ data
+│  └─ input.txt
+├─ logs
+├─ README.md
+├─ requirements.txt
+├─ scripts
+│  └─ logger.py
+├─ src
+│  ├─ api_client.py
+│  ├─ config.py
+│  ├─ file_reader.py
+│  ├─ runner.py
+│  └─ __init__.py
+└─ tests
+
+```
